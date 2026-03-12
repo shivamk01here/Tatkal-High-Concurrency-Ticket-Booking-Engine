@@ -9,12 +9,10 @@ import (
 	"github.com/shivamk01here/tatkal-engine/internal/core/ports"
 )
 
-// trainRepository implements ports.TrainRepository
 type trainRepository struct {
 	db *pgxpool.Pool
 }
 
-// NewTrainRepository creates a new instance of the repository
 func NewTrainRepository(db *pgxpool.Pool) ports.TrainRepository {
 	return &trainRepository{db: db}
 }
@@ -38,8 +36,6 @@ func (r *trainRepository) GetByID(ctx context.Context, id string) (*domain.Train
 }
 
 func (r *trainRepository) UpdateAvailableSeats(ctx context.Context, trainID string, seatsToDeduct int) error {
-	// Notice the highly optimized SQL here. We don't fetch and then update (which causes race conditions).
-	// We update it atomically directly in the database.
 	query := `
 		UPDATE trains 
 		SET available_seats = available_seats - $1 
