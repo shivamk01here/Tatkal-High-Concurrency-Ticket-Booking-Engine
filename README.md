@@ -5,14 +5,13 @@
 ![Redis](https://img.shields.io/badge/Redis-7+-DC382D?style=for-the-badge&logo=redis)
 ![Architecture](https://img.shields.io/badge/Architecture-Clean%2FHexagonal-blueviolet?style=for-the-badge)
 
-TatkalX is a high-performance backend engine built to survive the **"Thundering Herd" problem** — the kind of massive concurrent traffic spike that happens during Tatkal train bookings or flash sales.
+Tatkal is a high-performance backend engine built to survive the **"Thundering Herd" problem** — the kind of massive concurrent traffic spike that happens during Tatkal train bookings or flash sales.
 
 **Guarantees:**
 - Zero double bookings under concurrent load
 - High throughput during traffic spikes
 - Graceful degradation without data corruption
 
-> Built to demonstrate distributed system design principles expected at SDE-2 / SDE-3 level.
 
 ---
 
